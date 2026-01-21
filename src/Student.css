@@ -1,0 +1,734 @@
+/* Existing styles... */
+
+.student-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.btn-reset {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-reset:hover {
+    background: #f1f5f9;
+    color: var(--danger);
+    border-color: #cbd5e1;
+}
+
+/* Sections */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Role Card */
+.role-card {
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-main);
+    text-align: left;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.role-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: white;
+}
+
+.role-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    width: 50px;
+    /* Keep original width/height if not explicitly changed in edit */
+    height: 50px;
+    /* Keep original width/height if not explicitly changed in edit */
+    background: #e0f2fe;
+    /* Keep original background if not explicitly changed in edit */
+    color: var(--primary);
+    /* Keep original color if not explicitly changed in edit */
+    border-radius: 50%;
+    /* Keep original border-radius if not explicitly changed in edit */
+    align-items: center;
+    /* Keep original align-items if not explicitly changed in edit */
+    justify-content: center;
+    /* Keep original justify-content if not explicitly changed in edit */
+    font-weight: bold;
+    /* Keep original font-weight if not explicitly changed in edit */
+}
+
+.role-name {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.role-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Skill Check */
+.skill-panel {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    color: var(--text-main);
+}
+
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.skill-checkbox {
+    background: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.skill-checkbox:hover {
+    background: #f9fafb;
+    transform: translateY(-2px);
+}
+
+.skill-checkbox.selected {
+    background: #ecfdf5;
+    border-color: var(--success);
+    color: var(--success);
+    padding-left: 20px;
+    padding-right: 28px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 4px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-checkbox.selected .checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.skill-checkbox.selected .checkmark::after {
+    content: '✓';
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Quiz Mode Styles */
+.quiz-panel {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.quiz-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.quiz-progress-container {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #f59e0b, #ec4899);
+    transition: width 0.4s ease;
+}
+
+.question-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    border: 1px solid #f3f4f6;
+}
+
+.question-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-option {
+    padding: 18px 24px;
+    border: 2px solid #e5e7eb;
+    background: white;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    font-weight: 500;
+}
+
+.btn-option:hover {
+    background: #f9fafb;
+    border-color: #cbd5e1;
+    transform: translateX(5px);
+}
+
+.btn-option.selected {
+    border-color: var(--primary);
+    background: #fffbeb;
+    color: var(--primary-dark);
+}
+
+.btn-next {
+    display: block;
+    width: 200px;
+    margin: 2rem auto 0;
+    padding: 16px;
+    background: var(--text-main);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn-next:disabled {
+    background: #e5e7eb;
+    cursor: not-allowed;
+}
+
+/* Results Summary */
+.analysis-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.level-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 99px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.level-beginner {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.level-intermediate {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.level-expert {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.skill-summary-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: left;
+    margin-bottom: 2rem;
+    border: 1px solid #f3f4f6;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.strong-match {
+    color: var(--success) !important;
+}
+
+.potential-match {
+    color: var(--warning) !important;
+}
+
+.skill-gap {
+    color: var(--danger) !important;
+}
+
+.btn-analyze {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 16px;
+    background: var(--text-main);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(63, 63, 70, 0.2);
+}
+
+.btn-analyze:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-analyze:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(63, 63, 70, 0.3);
+    background: black;
+}
+
+/* Results */
+.results-panel {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-main);
+}
+
+.score-circle {
+    width: 180px;
+    height: 180px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    background: conic-gradient(var(--success) 0% 75%, #f3f4f6 75% 100%);
+    position: relative;
+    color: var(--success);
+}
+
+.score-circle::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 50%;
+}
+
+.score-circle span {
+    position: relative;
+    z-index: 2;
+}
+
+.match-status {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.strong-match {
+    color: var(--success);
+}
+
+.potential-match {
+    color: var(--warning);
+}
+
+.skill-gap {
+    color: var(--danger);
+}
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.job-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 20px;
+    border: 1px solid #f3f4f6;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-main);
+}
+
+.job-card.strong {
+    border-left-color: #10b981;
+}
+
+.job-card.potential {
+    border-left-color: #f59e0b;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 0.3rem;
+}
+
+.company-name {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.match-badge {
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-strong {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-potential {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.job-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.btn-apply {
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-apply:hover {
+    background: var(--primary-dark);
+}
+
+.missing-skills-list {
+    text-align: left;
+    background: #fef2f2;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #fee2e2;
+}
+
+.missing-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+    color: #b91c1c;
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    padding: 2.5rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: var(--text-main);
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+}
+
+.application-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.application-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.application-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: var(--text-main);
+    box-sizing: border-box;
+}
+
+.application-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+.file-input {
+    padding: 8px;
+    background: white;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 12px;
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: var(--text-muted);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-cancel:hover {
+    background: #f1f5f9;
+    color: var(--text-main);
+}
+
+.btn-submit {
+    flex: 2;
+    padding: 12px;
+    background: var(--success);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    filter: brightness(0.9);
+}
+
+/* Success View */
+.success-panel {
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.guidance-section {
+    text-align: left;
+    background: #f0f9ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border: 1px solid #e0f2fe;
+}
+
+.guidance-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.guidance-title:first-child {
+    margin-top: 0;
+}
+
+.guidance-steps,
+.tips-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.guidance-steps li,
+.tips-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.btn-done {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Skeleton Loader */
+.skeleton-header {
+    height: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    width: 300px;
+}
+
+.skeleton-card {
+    height: 200px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.animate-pulse {
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    z-index: 9999;
+}

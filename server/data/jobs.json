@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "Frontend Intern",
+        "company": "TechCorp",
+        "location": "Remote",
+        "stipend": "15000"
+    },
+    {
+        "id": 2,
+        "title": "Backend Intern",
+        "company": "NodeWorks",
+        "location": "Bangalore",
+        "stipend": "20000"
+    }
+]
